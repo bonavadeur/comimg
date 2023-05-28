@@ -3,15 +3,29 @@ import math
 import os
 from pathlib import Path
 
+
+def png2jpg(image):
+    img = Image.open(image)
+    img = img.convert('RGB')
+    img.save(f'{image[:-4]}.jpg')
+    os.remove(image)
+
+
 def comimg(image):
     img = Image.open(image)
     x, y = img.size
     img = img.resize((math.floor(x),math.floor(y)),Image.ANTIALIAS)
-    img.save(image, quality=50)
+    img.save(image, quality=60)
+
+
+pngImages = Path("./").glob("*.png")
+pngImages = [str(p) for p in pngImages]
+for i in range(len(pngImages)):
+    png2jpg(pngImages[i])
 
 jpgImages = Path("./").glob("*.jpg")
-pngImages = Path("./").glob("*.png")
-images = [str(p) for p in jpgImages] + [str(p) for p in pngImages]
+images = [str(p) for p in jpgImages]
+# images = [str(p) for p in jpgImages] + [str(p) for p in pngImages]
 
 for i in range(len(images)):
     comimg(images[i])
