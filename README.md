@@ -24,4 +24,5 @@ $\qquad$ file .exe sau khi được biên dịch nằm ở ./dist
 pip install pyinstaller
 ```
 ## 4. Phiên bản:
+v1.1: 28/05/2023: compress .png file
 v1.0: 20/01/2023
