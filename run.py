@@ -15,7 +15,7 @@ def comimg(image):
     img = Image.open(image)
     x, y = img.size
     img = img.resize((math.floor(x),math.floor(y)),Image.ANTIALIAS)
-    img.save(image, quality=60)
+    img.save(image, quality=25)
 
 
 pngImages = Path("./").glob("*.png")
