@@ -68,12 +68,12 @@ def compress(file):
     duration, width, height = get_video_info(input_file)
     codec = get_video_codec(input_file)
 
-    if width >= 3840 or height >= 2160: # 4K
-        min_bitrate, max_bitrate, target_bitrate = "30M", "60M", "40M"
-        crf_value = "16"
-    elif width >= 1920 or height >= 1080: # FHD
-        min_bitrate, max_bitrate, target_bitrate = "5M", "12M", "8M"
-        crf_value = "22"
+    if width >= 3840 or height >= 2160:  # 4K
+        min_bitrate, max_bitrate, target_bitrate = "8M", "20M", "10M"
+        crf_value = "26"
+    elif width >= 1920 or height >= 1080:  # FHD
+        min_bitrate, max_bitrate, target_bitrate = "1M", "4M", "2M"
+        crf_value = "30"
 
     print(f"Detected codec: {codec}")
     if codec == "hevc":
