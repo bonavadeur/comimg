@@ -14,7 +14,7 @@ def png2jpg(image):
 def comimg(image):
     img = Image.open(image)
     x, y = img.size
-    img = img.resize((math.floor(x),math.floor(y)),Image.ANTIALIAS)
+    img = img.resize((math.floor(x),math.floor(y)),Image.Resampling.LANCZOS)
     img.save(image, quality=25)
 
 
